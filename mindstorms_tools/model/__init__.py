@@ -1,4 +1,10 @@
 from dataclasses import dataclass
+from enum import Enum
+
+
+class SensorTypes(Enum):
+    DISCONNECTED: int = 0
+    ULTRASONIC_DISTANCE: int = 62
 
 
 @dataclass

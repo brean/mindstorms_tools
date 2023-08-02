@@ -1,4 +1,4 @@
-from .model import Message, Payload, Sensor
+from .model import Message, Payload, Sensor, SensorTypes
 
 
 def parse_sensor(sensor_data: list) -> list[Sensor]:
@@ -7,14 +7,13 @@ def parse_sensor(sensor_data: list) -> list[Sensor]:
     """
     sensors = []
     for sensor in sensor_data:
-        print(sensor, len(sensor))
-        sensors.append(Sensor(type=sensor[0], value=sensor[1]))
+        sensors.append(Sensor(type=SensorTypes(sensor[0]), value=sensor[1]))
     return sensors
 
 
 def parse_message(data: str) -> Message:
     if 'm' not in data:
-        print(f'unknown data received: {data}')
+        raise RuntimeError(f'unknown data received: {data}')
         return
 
     msg_type = data['m']
@@ -25,4 +24,4 @@ def parse_message(data: str) -> Message:
             payload=Payload(
                 sensors=sensors))
     else:
-        print(f'unknown data received: {data}')
+        raise RuntimeError(f'unknown data received: {data}')
