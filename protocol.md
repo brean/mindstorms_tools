@@ -53,4 +53,17 @@ sensors:
 The first value in sensors is the sensor type, if nothing is connected it is 0,
 other sensors are:
 
-62: ultrasonic distance sensor
+- 1: simple medium linear motor
+- 2: train motor
+- 8: light
+- 37: color and distance sensor
+- 38: medium linear motor
+- 46: Technic large motor
+- 47: Technic XL motor
+- 61: color sensor
+- 62: ultrasonic distance sensor,
+- 63: force sensor
+- 64: 3x3 color light matrix
+- 75: medium angular motor
+- 76: large angular motor
+
