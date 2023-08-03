@@ -23,5 +23,14 @@ def parse_message(data: str) -> Message:
             type=msg_type,
             payload=Payload(
                 sensors=sensors))
+    elif msg_type == 2:
+        # {'m': 2, 'p': [7.206, 40, True]}
+        print(data)
+        pass
+    elif msg_type == 4:
+        # motor data?
+        # {'m': 4, 'p': 0}
+        print(data)
+        pass
     else:
         raise RuntimeError(f'unknown data received: {data}')
